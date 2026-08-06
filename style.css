@@ -440,6 +440,10 @@ main {
   color: var(--text-body);
 }
 
+.member-list .member-gap {
+  margin-top: 0.9rem;
+}
+
 .member-list a {
   color: var(--text-body);
   text-decoration: underline;
@@ -483,27 +487,58 @@ main {
 }
 
 /* JOIN PAGE */
-.join-section {
-  margin-bottom: 2.25rem;
-}
-
-.join-section h2 {
-  font-size: 0.7rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+.page-subtitle a {
   color: var(--text-muted);
+  text-decoration: underline;
+  text-decoration-color: var(--border);
+  text-underline-offset: 2px;
+  transition: color 0.15s, text-decoration-color 0.15s;
+}
+
+.page-subtitle a:hover {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
+}
+
+.join-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.25rem 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.join-card-gap {
+  margin-top: 2rem;
+}
+
+.join-card-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
   margin-bottom: 0.6rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid var(--border);
 }
 
-.join-section p {
-  font-size: 0.95rem;
+.join-card h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--text);
+}
+
+.join-card p {
+  font-size: 0.925rem;
   color: var(--text-body);
+  margin-bottom: 0.7rem;
 }
 
-.join-section a {
+.join-card p:last-child,
+.join-card ul:last-child {
+  margin-bottom: 0;
+}
+
+.join-card a {
   color: var(--text-body);
   text-decoration: underline;
   text-decoration-color: var(--border);
@@ -511,9 +546,82 @@ main {
   transition: color 0.15s, text-decoration-color 0.15s;
 }
 
-.join-section a:hover {
+.join-card a:hover {
   color: var(--accent);
   text-decoration-color: var(--accent);
+}
+
+.join-card .students-list a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.join-card .students-list a:hover {
+  text-decoration: underline;
+}
+
+.status-pill {
+  flex-shrink: 0;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.pill-open {
+  color: #047857;
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+}
+
+.pill-limited {
+  color: #b45309;
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+}
+
+.join-closed {
+  margin-top: 2.25rem;
+}
+
+.join-closed h2 {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.join-closed-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.85rem;
+}
+
+.join-closed-item {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.9rem 1rem;
+}
+
+.join-closed-item h3 {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 0.25rem;
+}
+
+.join-closed-item p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.55;
 }
 
 /* NEWS */
@@ -567,20 +675,20 @@ main {
 
 /* PROSPECTIVE STUDENTS CALLOUT */
 .students-callout {
-  background: var(--bg-subtle);
-  border: 1px solid var(--border);
-  border-left: 3px solid var(--accent);
-  border-radius: 4px;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-left: 4px solid var(--accent);
+  border-radius: 6px;
   padding: 1.1rem 1.25rem;
-  margin-top: 1.5rem;
+  margin: 0.25rem 0 1.75rem;
 }
 
 .students-callout-label {
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--text-muted);
+  color: var(--accent);
   margin-bottom: 0.5rem;
 }
 
@@ -649,5 +757,15 @@ footer {
   nav a {
     padding: 0.9rem 0.45rem;
     font-size: 0.82rem;
+  }
+
+  .join-closed-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .join-card-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
   }
 }
