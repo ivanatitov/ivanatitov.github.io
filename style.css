@@ -551,6 +551,10 @@ main {
   text-decoration-color: var(--accent);
 }
 
+.join-card .students-list {
+  margin-bottom: 0.7rem;
+}
+
 .join-card .students-list a {
   color: var(--accent);
   text-decoration: none;
